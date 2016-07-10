@@ -25,8 +25,14 @@ public class PracticeActivity extends AppCompatActivity {
         ActivityPracticeBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_practice);
         practice = new Practice();
         scales = ScaleGeneratorService.getScales();
-        practice.scaleDescription.set(getCurrentScale().description);
+        updatePractice();
         binding.setPractice(practice);
+    }
+
+    private void updatePractice() {
+        practice.scaleDescription.set(getCurrentScale().description);
+        String numberDesc = String.format("Scale %s of %s", scaleIndex + 1, scales.length);
+        practice.scaleNumberDescription.set(numberDesc);
     }
 
     public void goToNextScale(View view) {
@@ -35,7 +41,7 @@ public class PracticeActivity extends AppCompatActivity {
             return;
         }
         scaleIndex++;
-        practice.scaleDescription.set(getCurrentScale().description);
+        updatePractice();
         if (scaleIndex == scales.length - 1) {
             Button button = (Button) view;
             button.setText("Done!");

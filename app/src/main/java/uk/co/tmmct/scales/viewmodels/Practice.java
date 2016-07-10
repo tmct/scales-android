@@ -12,5 +12,6 @@ public class Practice {
     public final ObservableField<String> scaleDescription =
             new ObservableField<>();
 
-    public final ObservableInt scaleNumber = new ObservableInt(0);
+    public final ObservableField<String> scaleNumberDescription =
+            new ObservableField<>();
 }
