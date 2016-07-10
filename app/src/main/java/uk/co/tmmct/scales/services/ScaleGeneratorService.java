@@ -7,6 +7,10 @@ import uk.co.tmmct.scales.models.Scale;
  */
 public class ScaleGeneratorService {
     public static Scale[] getScales() {
-        return new Scale[]{new Scale("C major"), new Scale("B flat minor"), new Scale("D minor arpeggio")};
+        return new Scale[] {
+                new Scale(),
+                new Scale(),
+                new Scale()
+        };
     }
 }

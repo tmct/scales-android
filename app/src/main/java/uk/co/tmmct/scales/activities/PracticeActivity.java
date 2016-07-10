@@ -30,7 +30,7 @@ public class PracticeActivity extends AppCompatActivity {
     }
 
     private void updatePractice() {
-        practice.scaleDescription.set(getCurrentScale().description);
+        practice.scaleDescription.set(getCurrentScale().getDescription());
         String numberDesc = String.format("Scale %s of %s", scaleIndex + 1, scales.length);
         practice.scaleNumberDescription.set(numberDesc);
     }
