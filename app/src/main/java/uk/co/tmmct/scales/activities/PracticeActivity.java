@@ -29,6 +29,7 @@ public class PracticeActivity extends AppCompatActivity {
     }
 
     public void goToNextScale(View view) {
-        //scale.set(new Scale("Contrary motion!"));
+        scaleIndex++;
+        scale.description.set("Contrary motion!");
     }
 }
