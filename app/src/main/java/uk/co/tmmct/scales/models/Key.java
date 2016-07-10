@@ -12,11 +12,12 @@ public class Key {
         this.mode = mode;
     }
 
-    public static Key getRandomKey() {
-        return new Key(Note.getRandomNote(), Mode.getRandomMode());
+    public static Key getRandomKey(boolean isArpeggio) {
+        Mode mode = Mode.getRandomMode(isArpeggio);
+        return new Key(Note.getRandomNote(), mode);
     }
 
     public String getName() {
-        return tonic.getName() + " " + mode.getName();
+        return tonic.getName() + " " + mode.name;
     }
 }

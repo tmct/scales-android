@@ -6,25 +6,31 @@ import java.util.Random;
  * Created by thomas on 10/07/2016.
  */
 public class Mode {
-    private int index;
+    public String name;
 
-    public Mode(int index) {
-        this.index = index;
+    public Mode(String name) {
+        this.name = name;
     }
 
-    public static Mode getRandomMode() {
+    public static Mode getRandomMode(boolean isArpeggio) {
+        String[] modeNames = isArpeggio ? arpeggioModeNames : scaleModeNames;
+        String name = getRandomName(modeNames);
+        return new Mode(name);
+    }
+
+    private static String getRandomName(String[] collection) {
         Random rand = new Random();
-        int modeValue = rand.nextInt(3);
-        return new Mode(modeValue);
+        return collection[rand.nextInt(collection.length)];
     }
 
-    public String getName() {
-        return modeNames[index];
-    }
+    private static final String[] scaleModeNames = new String[] {
+            "major",
+            "minor (harmonic)",
+            "minor (melodic)"
+    };
 
-    private final String[] modeNames = new String[] {
-        "major",
-        "minor (harmonic)",
-        "minor (melodic)"
+    private static final String[] arpeggioModeNames = new String[] {
+            "major",
+            "minor"
     };
 }
