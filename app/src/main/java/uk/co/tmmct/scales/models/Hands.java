@@ -6,5 +6,8 @@ package uk.co.tmmct.scales.models;
 public enum Hands {
     TOGETHER,
     LEFT_ONLY,
-    RIGHT_ONLY
+    RIGHT_ONLY,
+    NOT_APPLICABLE;
+
+    public static Hands[] Separately = new Hands[] {LEFT_ONLY, RIGHT_ONLY};
 }

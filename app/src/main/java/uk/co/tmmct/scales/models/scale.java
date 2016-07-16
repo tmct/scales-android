@@ -7,21 +7,27 @@ public class Scale {
     public final Key key;
     public final Hands hands;
     public final Articulation articulation;
+    public final ScaleType scaleType;
+    public final int numberOfOctaves;
 
     public String getDescription() {
-        return String.format("Scale!");
+        return String.format("Scale! %s %s %s", key, hands, articulation);
     }
 
     private Scale(ScaleBuilder scalebuilder) {
         this.key = scalebuilder.key;
         this.hands = scalebuilder.hands;
         this.articulation = scalebuilder.articulation;
+        this.scaleType = scalebuilder.scaleType;
+        this.numberOfOctaves = scalebuilder.numberOfOctaves;
     }
 
     public static class ScaleBuilder {
         private Hands hands;
         private Key key;
         private Articulation articulation;
+        private ScaleType scaleType;
+        private int numberOfOctaves;
 
         public ScaleBuilder() {
         }
@@ -38,6 +44,16 @@ public class Scale {
 
         public ScaleBuilder WithArticulation(Articulation articulation) {
             this.articulation = articulation;
+            return this;
+        }
+
+        public ScaleBuilder WithScaleType(ScaleType scaleType) {
+            this.scaleType = scaleType;
+            return this;
+        }
+
+        public ScaleBuilder WithNumberOfOctaves(int numberOfOctaves) {
+            this.numberOfOctaves = numberOfOctaves;
             return this;
         }
 

@@ -15,5 +15,6 @@ public enum Note {
     F,
     F_SHARP,
     G,
-    G_SHARP
+    G_SHARP;
+    public static Note[] AllStartingNotes = Note.values();
 }

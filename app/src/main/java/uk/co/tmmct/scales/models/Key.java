@@ -11,4 +11,9 @@ public class Key {
         this.tonic = tonic;
         this.mode = mode;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s", tonic, mode);
+    }
 }
