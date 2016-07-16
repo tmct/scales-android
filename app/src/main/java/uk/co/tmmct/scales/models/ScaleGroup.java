@@ -1,5 +1,9 @@
 package uk.co.tmmct.scales.models;
 
+import java.util.Random;
+
+import uk.co.tmmct.scales.utils.Utils;
+
 /**
  * Created by thomas on 16/07/16.
  */
@@ -19,10 +23,16 @@ public class ScaleGroup {
     }
 
     public Scale getRandomScale() {
+        Hands hands = Utils.getRandomElement(this.hands);
+        Key key = this.keyGroup.getRandomKey();
+        Articulation articulation = Utils.getRandomElement(this.articulation);
+
         return new Scale.ScaleBuilder()
-                .WithHands(hands[0])
-                .WithKey(keyGroup.getRandomKey())
-                .WithArticulation(Articulation.LEGATO)
+                .WithKey(key)
+                .WithScaleType(this.scaleType)
+                .WithHands(hands)
+                .WithArticulation(articulation)
+                .WithNumberOfOctaves(this.numberOfOctaves)
                 .Build();
     }
 

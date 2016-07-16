@@ -1,5 +1,7 @@
 package uk.co.tmmct.scales.models;
 
+import uk.co.tmmct.scales.utils.Utils;
+
 /**
  * Created by thomas on 16/07/16.
  */
@@ -8,7 +10,10 @@ public class KeyGroup {
     public final Note[] tonics;
 
     public Key getRandomKey() {
-        return new Key(tonics[0], modes[0]);
+        return new Key(
+                Utils.getRandomElement(tonics),
+                Utils.getRandomElement(modes)
+        );
     }
 
     private KeyGroup(KeyGroupBuilder keyGroupBuilder) {

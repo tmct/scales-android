@@ -14,7 +14,13 @@ public class ScaleGeneratorService {
     public static Scale[] getScales() {
         return new Scale[]{
                 scaleGroups[0].getRandomScale(),
-                scaleGroups[1].getRandomScale()
+                scaleGroups[1].getRandomScale(),
+                scaleGroups[2].getRandomScale(),
+                scaleGroups[3].getRandomScale(),
+                scaleGroups[4].getRandomScale(),
+                scaleGroups[5].getRandomScale(),
+                scaleGroups[6].getRandomScale(),
+                scaleGroups[7].getRandomScale()
         };
     }
 }

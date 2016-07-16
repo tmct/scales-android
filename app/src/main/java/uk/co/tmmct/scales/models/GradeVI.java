@@ -59,7 +59,8 @@ public class GradeVI {
             .Build();
 
     private static final ScaleGroup chromaticContraryMotionScales = new ScaleGroup.ScaleGroupBuilder()
-            .WithType(ScaleType.CHROMATIC_CONTRARY_MOTION) //AAAARGH need to redefine
+            .WithType(ScaleType.CHROMATIC_CONTRARY_MOTION) //AAAARGH need to redefine            .InAllKeys() //ugh
+            .InAllKeys() //ugh
             .WithNumberOfOctaves(2)
             .Legato()
             .HandsTogetherAndSeparately()
@@ -75,6 +76,7 @@ public class GradeVI {
 
     private static final ScaleGroup diminishedSevenths = new ScaleGroup.ScaleGroupBuilder()
             .WithType(ScaleType.DIMINISHED_SEVENTH)
+            .InAllKeys() //ugh
             //.StartingOnBAndCSharp()
             .WithNumberOfOctaves(4)
             .Legato()

@@ -11,7 +11,7 @@ public class Scale {
     public final int numberOfOctaves;
 
     public String getDescription() {
-        return String.format("Scale! %s %s %s", key, hands, articulation);
+        return String.format("%s, %s, %s, %s, %s octaves", scaleType, key, hands, articulation, numberOfOctaves);
     }
 
     private Scale(ScaleBuilder scalebuilder) {
